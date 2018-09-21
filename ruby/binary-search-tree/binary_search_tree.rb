@@ -18,9 +18,20 @@ class Bst
   def each(&block)
     return enum_for(:each) unless block_given?
 
+    # Pre-order traversal
+    # yield @data
+    # @left.each(&block) if @left
+    # @right.each(&block) if @right
+
+    # Post-Order traversal
     @left.each(&block) if @left
     yield @data
     @right.each(&block) if @right
+
+    # In-order traversal
+    # @left.each(&block) if @left
+    # yield @data
+    # @right.each(&block) if @right
   end
 
   private

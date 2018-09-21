@@ -30,13 +30,18 @@ class BstTest < Minitest::Test
   end
 
   def test_complex_tree
-    four = Bst.new 4
-    four.insert 2
-    four.insert 6
+    skip
+    four = Bst.new 0
     four.insert 1
+    four.insert 2
     four.insert 3
-    four.insert 7
+    four.insert 4
     four.insert 5
+    four.insert 6
+    four.insert 7
+    four.insert 8
+    four.insert 9
+    four.insert 10
     assert_equal 4, four.data
     assert_equal 2, four.left.data
     assert_equal 1, four.left.left.data
@@ -70,14 +75,18 @@ class BstTest < Minitest::Test
   end
 
   def test_iterating_over_complex_tree
-    four = Bst.new 4
-    four.insert 2
-    four.insert 1
-    four.insert 3
-    four.insert 6
-    four.insert 7
-    four.insert 5
-    assert_equal [1, 2, 3, 4, 5, 6, 7], record_all_data(four)
+    zero = Bst.new 7
+    zero.insert 1
+    zero.insert 0
+    zero.insert 3
+    zero.insert 2
+    zero.insert 5
+    zero.insert 4
+    zero.insert 6
+    zero.insert 9
+    zero.insert 8
+    zero.insert 10
+    assert_equal [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], record_all_data(zero)
   end
 
   def test_each_returns_enumerator_if_no_block
